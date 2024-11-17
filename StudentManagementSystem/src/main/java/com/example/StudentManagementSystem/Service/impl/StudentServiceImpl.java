@@ -55,4 +55,23 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.deleteById(id);
 
     }
+
+    @Override
+    public List<Student>getStudentByYearOfEnrollment(String yearOfEnrollment) {
+        return studentRepository.findByYearOfEnrollment(yearOfEnrollment);
+    }
+
+    @Override
+    public String getDepartmentById(long id){
+        return studentRepository.findDepartmentById(id);
+
+    }
+
+    @Override
+    public void deleteStudentByYearOfEnrollment(String yearOfEnrollment) {
+
+        studentRepository.deleteAllByYearOfEnrollment(yearOfEnrollment);
+
+
+    }
 }
